@@ -1,28 +1,24 @@
 # Sample inputs (# note: The values given in the prefix code(grey) will be changed by the autograder according to the testcase while running them.
-a = 5
 
-price1, discount1 = 50, 4 # for offer1
-price2, discount2 = 60, 8 # for offer2
-
-# Assume discount is given in percentages
-
+s = "hello pyhton"
+course_code = "24t2cs1002" # 24 - year, t2 - term 2, cs1002 - course id
 # <eoi>
 
-output1 = a >= 5 # bool: True if a greater than or equal to 5
+output1 = s[4] # str: get the third character of s
 
-output2 = (a % 5 == 0) # bool: True if a is divisible by 5
+output2 = s[-4] # str: get the fourth last character of s
 
-output3 = (a%2 != 0 and a < 10) # bool: True if a is odd number less than 10
+output3 = s[:3] # str: get the first 3 characters of s
 
-output4 = (a%2 != 0 and -10 < a < 10) # bool: True if a is an odd number within the range -10 and 10
+output4 = s[::2] # str: get every second character of s
 
-output5 = (len(str(a)) % 2 == 0) and (len(str(a)) <= 10) # bool: True if a has even number of digits but not more than 10 digits
+output5 = s[-3:] # str: get the last 3 characters of s
 
-is_offer1_cheaper = (price1 - (price1*discount1/100)) < (price2 - (price2*discount2/100)) # bool: True if the offer1 is strictly cheaper
+output6 = s[::-1] # str: get the reverse of s
 
-print(output1)
-print(output2)
-print(output3)
-print(output4)
-print(output5)
-print(is_offer1_cheaper)
+course_term = int(course_code[3]) # int: get the term of the year as number from course_code
+course_year = int(course_code[:2]) # int: get the year as two digit number from course_code
+print(s[::1])
+print(s[::-1])
+print(s[::2])
+print(s[::-2])
