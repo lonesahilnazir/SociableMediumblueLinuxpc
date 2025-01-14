@@ -1,32 +1,24 @@
-# Sample inputs (# note: The values given in the prefix code(grey) will be changed by the autograder according to the testcase while running them.
-word1 = "Wingardium" # str
-word2 = "Leviyosa" # str
-word3 = "Silver" # str
-sentence = "Learning python is fun"
-n1 = 6 # int
-n2 = 4 # int
-# <eoi>
+age = int(input()) # int: Read a number as integer from standard input
+dob = str(input()) # str: Read a string of format dd/mm/yy from standard input
+day, month, year = int(dob[:2]), int(dob[3:5]), int(dob[-2:]) # int, int, int: Get the correct parts from dob as int
 
-output1 = word1 + " " + word2 # str: join word1 and word2 with space in between
+fifth_birthday = f"{day}/{month}/{year+5}" # str: fifth birthday formatted as day/month/year 
 
-output2 = word1[:4] + "-" + word2[-4:] # str: join first four letters of word1 and last four letters of word 2 with a hyphen "-" in between
+last_birthday = f"{day}/{month}/{year+age}" # str: last birthday formatted as day/month/year
+# day, month, year = 12,7,12
+adding_10_m = month + 10 - 1
+month = (adding_10_m % 12) + 1
+year = year + (adding_10_m // 12)
 
-output3 = word3 + " " + str(n1) # str: join the word3 and n1 with a space in between
+tenth_month = f"{day}/{month}/{year}" # str: dob same day after 10 months formatted as day/month/year
 
-output4 = "-" * 50 # str: just the hypen "-" repeated 50 times
+# print tenth_month, fifth_birthday and last_birthday in same line separated by comma and a space
+print(tenth_month, fifth_birthday, last_birthday, sep=", ")
 
-output5 = "-" * n2 # str: just the hypen "-" repeated n2 times
+weight = float(input()) # float: Read a number as float from stdin(Standard input)
 
-output6 = str(n1) * n2 # str: repeat the number n1, n2 times
+weight_readable = f"{int(weight // 1)} kg {int((weight - (weight // 1))*1000)} grams" # str: reformat weight of format 55 kg 250 grams
 
-are_all_words_equal = word1 == word2 == word3 # bool: True if all three words are equal
-
-is_word1_comes_before_other_two = word1 < word2 < word3 # bool: True if word1 comes before word2 and word3 assume all words are different
-
-has_h = 'h' in word1.lower() # bool: True if word1 has the letter h
-
-ends_with_a = word1[-1].lower() == "a" # bool: True if word1 ends with letter a or A
-
-has_the_word_python = "python" in sentence.lower() # bool: True if the sentence has the word python
-
-print(has_the_word_python)
+# print weight_readable 
+print(weight_readable)
+# print(adding_10_m // 12, month)
