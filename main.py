@@ -1,24 +1,32 @@
 # Sample inputs (# note: The values given in the prefix code(grey) will be changed by the autograder according to the testcase while running them.
-
-s = "hello pyhton"
-course_code = "24t2cs1002" # 24 - year, t2 - term 2, cs1002 - course id
+word1 = "Wingardium" # str
+word2 = "Leviyosa" # str
+word3 = "Silver" # str
+sentence = "Learning python is fun"
+n1 = 6 # int
+n2 = 4 # int
 # <eoi>
 
-output1 = s[4] # str: get the third character of s
+output1 = word1 + " " + word2 # str: join word1 and word2 with space in between
 
-output2 = s[-4] # str: get the fourth last character of s
+output2 = word1[:4] + "-" + word2[-4:] # str: join first four letters of word1 and last four letters of word 2 with a hyphen "-" in between
 
-output3 = s[:3] # str: get the first 3 characters of s
+output3 = word3 + " " + str(n1) # str: join the word3 and n1 with a space in between
 
-output4 = s[::2] # str: get every second character of s
+output4 = "-" * 50 # str: just the hypen "-" repeated 50 times
 
-output5 = s[-3:] # str: get the last 3 characters of s
+output5 = "-" * n2 # str: just the hypen "-" repeated n2 times
 
-output6 = s[::-1] # str: get the reverse of s
+output6 = str(n1) * n2 # str: repeat the number n1, n2 times
 
-course_term = int(course_code[3]) # int: get the term of the year as number from course_code
-course_year = int(course_code[:2]) # int: get the year as two digit number from course_code
-print(s[::1])
-print(s[::-1])
-print(s[::2])
-print(s[::-2])
+are_all_words_equal = word1 == word2 == word3 # bool: True if all three words are equal
+
+is_word1_comes_before_other_two = word1 < word2 < word3 # bool: True if word1 comes before word2 and word3 assume all words are different
+
+has_h = 'h' in word1.lower() # bool: True if word1 has the letter h
+
+ends_with_a = word1[-1].lower() == "a" # bool: True if word1 ends with letter a or A
+
+has_the_word_python = "python" in sentence.lower() # bool: True if the sentence has the word python
+
+print(has_the_word_python)
