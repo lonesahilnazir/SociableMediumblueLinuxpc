@@ -1,21 +1,11 @@
-x1 = input()
-x2 = input()
-y1 = input()
-y2 = input()
-y3 = input()
-z = input()
+# A single quote ' and a double quote "
+output1 = "A single quote ' and a double quote \""
 
-# swap the values of `x1` and `x2`
-x1, x2 = x2, x1
-# do a circular swap of `y1`, `y2` and `y3`  like y1 = y2, y2 = y3, y3 = y1 
-y1, y2, y3 = y2, y3, y1
-# create a new variable `a` with the value of `z`
-a = z
-# delete the variable `z`
-del z
-print(x1)
-print(x2)
-print(y1)
-print(y2)
-print(y3)
-print(a)
+# A forward slash / and a backward slash \
+output2 = "A forward slash / and a backward slash \\"
+
+# Three single quotes ''' and three double quotes """
+output3 = "Three single quotes ''' and three double quotes \"\"\""
+
+# Double forward slash // and Double backward slash \\
+output4 = "Double forward slash // and Double backward slash \\\\"
