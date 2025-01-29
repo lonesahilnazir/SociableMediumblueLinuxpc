@@ -1,56 +1,28 @@
-    action = str(input())
+main_dish = input()
+time_of_day = int(input())
+has_voucher =   input().lower() == "true"
+is_card_payment = input().lower() == "true"
 
-    if action == "odd_num_check":
-        number = int(input())
-        if number % 2 == 0:
-            print("no")
-        else:
-            print("yes")
+if main_dish == "paneer tikka":
+    cost = 250
+elif main_dish == "butter chicken":
+    cost = 240
+elif main_dish == "masala dosa":
+    cost = 200
+else: # if main dish is invalid print invalid dish and exit the code.
+   print("Invalid main dish")
+   exit() 
 
-    elif action == "perfect_square_check":
-        number = int(input())
-        if number < 0:
-            print("no")
-        else:
-            is_sq = False
-            x = 0
-            while x * x <= number:
-                if x * x == number:
-                    is_sq = True
-                else:
-                    is_sq = False
-                x += 1
-            print("yes" if is_sq else "no")
+if time_of_day >= 12 and time_of_day <= 15:
+    total_cost = (1 - 0.15) * cost
+else:
+    total_cost = cost
 
-    elif action == "vowel_check":
-        text = str(input())
-        if any(char in "aeiouAEIOU" for char in text):
-            print("yes")
-        else:
-            print("no")
+if has_voucher:
+    total_cost *= 0.9  # Apply voucher discount
 
-    elif action == "divisibility_check":
-        number = int(input())
-        if number % 2 == 0 and number % 3 == 0:
-            print("divisible by 2 and 3")
-        elif number % 2 == 0:
-            print("divisible by 2")
-        elif number % 3 == 0:
-            print("divisible by 3")
-        else:
-            print("not divisible by 2 and 3")
+if is_card_payment:  # service charge for card payments
+    service_charge = 0.05 * total_cost
+    total_cost += service_charge
 
-    elif action == "palindrominator":
-        text = str(input())
-        print(text+text[:-1][::-1])
-
-    elif action == "simple_interest":
-        principal_amount = int(input())
-        n_years = int(input())
-        if n_years < 10:
-            print(round(principal_amount * 5 * n_years / 100))
-        else:
-            print(round(principal_amount * 8 * n_years / 100))
-
-    else:
-        print("Invalid Operation")
+print(f"{total_cost:.02f}")
