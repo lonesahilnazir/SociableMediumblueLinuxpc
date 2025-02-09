@@ -34,3 +34,6 @@ def make_identity_matrix(m):
 
 def make_lower_triangular_matrix(m):
     return [[i + 1 if i <= j else 0 for i in range(m)] for j in range(m)]
+
+
+print(make_lower_triangular_matrix(3))
